@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -56,8 +56,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr" translatesAutoresizingMaskIntoConstraints="NO" id="mYn-vV-MBC">
-                                        <rect key="frame" x="254" y="50" width="120" height="120"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mYn-vV-MBC">
+                                        <rect key="frame" x="254" y="49.5" width="120" height="120.5"/>
                                         <color key="tintColor" name="weatherColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="GFV-i5-W4H"/>
@@ -133,10 +133,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arr" width="128" height="128"/>
         <image name="background_image" width="662" height="662"/>
         <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="125"/>
         <namedColor name="weatherColor">
             <color red="0.14900000393390656" green="0.25900000333786011" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
