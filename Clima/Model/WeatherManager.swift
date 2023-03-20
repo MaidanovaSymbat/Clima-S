@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
@@ -25,47 +28,84 @@ struct WeatherManager {
         
     }
     
+//    func performRequest(with urlString: String) {
+//        //create URL
+//        if let url = URL(string: urlString) {
+//            //Create URL session
+//            let session = URLSession(configuration: .default)
+//            //Give the session a task
+//            let task = session.dataTask(with: url) { (data, response, error) in
+//                if error != nil {
+//                    self.delegate?.didFailWithError(error: error!)
+//                    return
+//                }
+//
+//                if let safeData = data {
+//                    if let weather = self.parseJSON(safeData) {
+//                        self.delegate?.didUpdateWeather(self, weather: weather)
+//                    }
+//                }
+//            }
+//            //Start the task
+//            task.resume()
+//        }
+//    }
+    
     func performRequest(with urlString: String) {
-        //create URL
-        if let url = URL(string: urlString) {
-            //Create URL session
-            let session = URLSession(configuration: .default)
-            //Give the session a task
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
-                    return
-                }
-                
+        AF.request(urlString).validate().response { response in
+            switch response.result {
+            case .success(let data):
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
                         self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
+            case .failure(let error):
+                self.delegate?.didFailWithError(error: error)
             }
-            //Start the task
-            task.resume()
         }
     }
     
+    
+//    func parseJSON(_ weatherData: Data) -> WeatherModel? {
+//        let decoder = JSONDecoder()
+//        do {
+//            let decodedData =  try decoder.decode(WeatherData.self, from: weatherData)
+//            let id = decodedData.weather[0].id
+//            let temp = decodedData.main.temp
+//            let cityName = decodedData.name
+//
+//            let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
+//
+//            print(weather.temperatureString)
+//            print(weather.conditionName)
+//            return weather
+//        } catch {
+//            delegate?.didFailWithError(error: error)
+//            return nil
+//        }
+//
+//    }
+    
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData =  try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.weather[0].id
-            let temp = decodedData.main.temp
-            let cityName = decodedData.name
-            
-            let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
-            
-            print(weather.temperatureString)
-            print(weather.conditionName)
-            return weather
-        } catch {
-            delegate?.didFailWithError(error: error)
-            return nil
-        }
-        
+        let json = JSON(weatherData)
+        let id = json["weather"][0]["id"].intValue
+        let temp = json["main"]["temp"].doubleValue
+        let cityName = json["name"].stringValue
+
+        let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
+
+        print(weather.temperatureString)
+        print(weather.conditionName)
+        print(weather.cityName)
+
+        return weather
+
     }
     
 }
+
+
+
+
+

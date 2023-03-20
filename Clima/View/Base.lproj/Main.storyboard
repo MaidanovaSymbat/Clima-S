@@ -90,22 +90,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-bh-8Fw">
-                                        <rect key="frame" x="134" y="355.5" width="240" height="458.5"/>
+                                        <rect key="frame" x="134" y="355.5" width="240" height="408.5"/>
                                     </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wU4-yr-DoF">
+                                        <rect key="frame" x="245" y="774" width="129" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2rd-4q-Vck"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="xR8-7u-bgf"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Celsius"/>
+                                            <segment title="Kelvin"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="CelsiusToKelvinTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="rM4-Mi-fOu"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Tgv-vV-Mot" secondAttribute="trailing" id="Xxe-YD-sFY"/>
                                     <constraint firstItem="Tgv-vV-Mot" firstAttribute="leading" secondItem="Wz9-jj-JbA" secondAttribute="leading" id="zMA-9O-gQ7"/>
                                 </constraints>
                             </stackView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sxf-4a-8dy">
-                                <rect key="frame" x="141" y="832" width="131" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NZx-WX-50X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,6 +127,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CelsiusLabel" destination="N7Y-Fj-S2q" id="47k-iG-Mpe"/>
+                        <outlet property="KelvinLabel" destination="MHH-vY-Mrb" id="694-S3-paQ"/>
                         <outlet property="cityLabel" destination="CWP-r8-Jsy" id="8cQ-3l-ufV"/>
                         <outlet property="conditionImageView" destination="mYn-vV-MBC" id="gpD-FU-YB0"/>
                         <outlet property="searchTextField" destination="2eh-wL-W34" id="wLr-Jr-wCm"/>
