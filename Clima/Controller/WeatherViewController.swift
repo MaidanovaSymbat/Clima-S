@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
 
@@ -19,8 +20,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     
     @IBOutlet weak var CelsiusLabel: UILabel!
     
-    
-    var weather: WeatherModel
+
     
     var weatherManager = WeatherManager()
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         
         weatherManager.delegate = self
         searchTextField.delegate = self
+        
+        Localize.setCurrentLanguage("es")
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -50,12 +52,13 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         searchTextField.text = ""
     }
     
+    
+    
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-            self.cityLabel.text = weather.cityName
-            
+            self.cityLabel.text = weather.cityName.localized()
         }
    
     }
@@ -76,14 +79,13 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
             print("Right")
             
         } else if sender.selectedSegmentIndex == 0 {
-            self.temperatureLabel.text = weather.temperatureString
             self.temperatureLabel.text = String(celsius)
             self.KelvinLabel.text = "C"
             self.CelsiusLabel.text = "°"
-            print("Pressed")
+            print(sender.selectedSegmentIndex)
         }
-        
     }
+    
     
 //    func reset() {
 //        // сбросить все изменения

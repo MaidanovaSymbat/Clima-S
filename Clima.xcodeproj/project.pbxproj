@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A011F5CC29C9A3D500D405C0 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = A011F5CB29C9A3D500D405C0 /* Localize_Swift */; };
 		A04C052229A80B58005881EA /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C052129A80B58005881EA /* WeatherManager.swift */; };
 		A04C052429AA0C33005881EA /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C052329AA0C33005881EA /* WeatherData.swift */; };
 		A04C052629AB76D5005881EA /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C052529AB76D5005881EA /* WeatherModel.swift */; };
@@ -25,6 +26,10 @@
 		A04C052129A80B58005881EA /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		A04C052329AA0C33005881EA /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		A04C052529AB76D5005881EA /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		A0CC118729CAD715008FD538 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A0CC118829CAD72E008FD538 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Main.strings; sourceTree = "<group>"; };
+		A0CCEABD29CA28D70025B64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A0CCEABE29CA28D70025B64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ADAA27AD231BBFAF00365194 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAA27B0231BBFAF00365194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A011F5CC29C9A3D500D405C0 /* Localize_Swift in Frameworks */,
 				A08D671429C79D0800FAFF1B /* SwiftyJSON in Frameworks */,
 				A092EB0529C82FB30002929E /* Alamofire in Frameworks */,
 			);
@@ -126,6 +132,7 @@
 			packageProductDependencies = (
 				A08D671329C79D0800FAFF1B /* SwiftyJSON */,
 				A092EB0429C82FB30002929E /* Alamofire */,
+				A011F5CB29C9A3D500D405C0 /* Localize_Swift */,
 			);
 			productName = Clima;
 			productReference = ADAA27AD231BBFAF00365194 /* Clima.app */;
@@ -153,11 +160,15 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				es,
+				kk,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
 			packageReferences = (
 				A08D671229C79D0800FAFF1B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				A092EB0329C82FB20002929E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A011F5CA29C9A3D400D405C0 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
 			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
@@ -203,6 +214,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				ADAA27B7231BBFAF00365194 /* Base */,
+				A0CCEABD29CA28D70025B64D /* ru */,
+				A0CC118729CAD715008FD538 /* es */,
+				A0CC118829CAD72E008FD538 /* kk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -211,6 +225,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ADAA27BC231BBFB300365194 /* Base */,
+				A0CCEABE29CA28D70025B64D /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -283,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -388,6 +405,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A011F5CA29C9A3D400D405C0 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		A08D671229C79D0800FAFF1B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -407,6 +432,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A011F5CB29C9A3D500D405C0 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A011F5CA29C9A3D400D405C0 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
 		A08D671329C79D0800FAFF1B /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A08D671229C79D0800FAFF1B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
+
 
 
 protocol WeatherManagerDelegate {
@@ -92,6 +94,7 @@ struct WeatherManager {
         let id = json["weather"][0]["id"].intValue
         let temp = json["main"]["temp"].doubleValue
         let cityName = json["name"].stringValue
+        
 
         let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
 
