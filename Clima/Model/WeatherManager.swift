@@ -12,7 +12,6 @@ import SwiftyJSON
 import Localize_Swift
 
 
-
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
     func didFailWithError(error: Error)
@@ -20,90 +19,60 @@ protocol WeatherManagerDelegate {
 
 
 struct WeatherManager {
+
+
+    
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=a284ad0e76f35f63b94ab0587936e16b&units=metric"
     
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(with: urlString)
-        
-    }
+           let language = Locale.current.languageCode ?? "en"
+           let encodedCityName = cityName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+           let url = "\(weatherURL)&q=\(encodedCityName)&lang=\(language)"
+           performRequest(with: url)
+       }
     
-//    func performRequest(with urlString: String) {
-//        //create URL
-//        if let url = URL(string: urlString) {
-//            //Create URL session
-//            let session = URLSession(configuration: .default)
-//            //Give the session a task
-//            let task = session.dataTask(with: url) { (data, response, error) in
-//                if error != nil {
-//                    self.delegate?.didFailWithError(error: error!)
-//                    return
-//                }
-//
-//                if let safeData = data {
-//                    if let weather = self.parseJSON(safeData) {
-//                        self.delegate?.didUpdateWeather(self, weather: weather)
-//                    }
-//                }
-//            }
-//            //Start the task
-//            task.resume()
-//        }
-//    }
     
-    func performRequest(with urlString: String) {
-        AF.request(urlString).validate().response { response in
-            switch response.result {
-            case .success(let data):
-                if let safeData = data {
-                    if let weather = self.parseJSON(safeData) {
-                        self.delegate?.didUpdateWeather(self, weather: weather)
+    func performRequest(with url: String) {
+            AF.request(url).validate().response { response in
+                switch response.result {
+                case .success(let data):
+                    if let safeData = data {
+                        if let weather = self.parseJSON(safeData) {
+                            self.delegate?.didUpdateWeather(self, weather: weather)
+                        }
                     }
+                case .failure(let error):
+                    self.delegate?.didFailWithError(error: error)
                 }
-            case .failure(let error):
-                self.delegate?.didFailWithError(error: error)
             }
         }
-    }
     
     
-//    func parseJSON(_ weatherData: Data) -> WeatherModel? {
-//        let decoder = JSONDecoder()
-//        do {
-//            let decodedData =  try decoder.decode(WeatherData.self, from: weatherData)
-//            let id = decodedData.weather[0].id
-//            let temp = decodedData.main.temp
-//            let cityName = decodedData.name
-//
-//            let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
-//
-//            print(weather.temperatureString)
-//            print(weather.conditionName)
-//            return weather
-//        } catch {
-//            delegate?.didFailWithError(error: error)
-//            return nil
-//        }
-//
-//    }
-    
+  
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let json = JSON(weatherData)
         let id = json["weather"][0]["id"].intValue
         let temp = json["main"]["temp"].doubleValue
-        let cityName = json["name"].stringValue
-        
+        let cityNameEn = json["name"].stringValue // Получаем английское название города
+        let speed = json["wind"]["speed"].doubleValue
+        let feels_like = json["main"]["feels_like"].doubleValue
+        let pressure = json["main"]["pressure"].intValue
+        let humidity = json["main"]["humidity"].intValue
+        let sunrise = json["sys"]["sunrise"].intValue
+        let sunset = json["sys"]["sunset"].intValue
+        // Загружаем JSON-файл с названиями городов на разных языках
+        if let path = Bundle.main.path(forResource: "cities", ofType: "json"),
+           let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
+           let jsonCityNames = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: String]] {
+            let language = Locale.current.languageCode ?? "en"// Получаем текущий язык, если его нет, используем английский
+            let cityNameLocalized = jsonCityNames[cityNameEn]?[language] ?? cityNameEn // Переводим название города на нужный язык, если перевода нет, используем английское название
+            let weather = WeatherModel(conditionID: id, cityName: cityNameLocalized, temperature: temp, speed: speed, feels_like: feels_like, pressure: pressure, humidity: humidity, sunrise: sunrise, sunset: sunset)
+            return weather
+        }
 
-        let weather = WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
-
-        print(weather.temperatureString)
-        print(weather.conditionName)
-        print(weather.cityName)
-
-        return weather
-
+        return nil
     }
     
 }

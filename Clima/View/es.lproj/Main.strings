@@ -1,15 +1,39 @@
 
 /* Class = "UITextField"; placeholder = "Search"; ObjectID = "2eh-wL-W34"; */
-"2eh-wL-W34.placeholder" = "Búsqueda";
+"2eh-wL-W34.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Feels Like "; ObjectID = "6Px-TY-b2m"; */
+"6Px-TY-b2m.text" = "Feels Like ";
 
 /* Class = "UILabel"; text = "London"; ObjectID = "CWP-r8-Jsy"; */
-"CWP-r8-Jsy.text" = "Londres";
+"CWP-r8-Jsy.text" = "London";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "FsV-1E-PSz"; */
+"FsV-1E-PSz.text" = "50";
 
 /* Class = "UILabel"; text = "C"; ObjectID = "MHH-vY-Mrb"; */
 "MHH-vY-Mrb.text" = "C";
 
 /* Class = "UILabel"; text = "°"; ObjectID = "N7Y-Fj-S2q"; */
 "N7Y-Fj-S2q.text" = "°";
+
+/* Class = "UILabel"; text = "Humidity"; ObjectID = "R2R-2A-U6N"; */
+"R2R-2A-U6N.text" = "Humidity";
+
+/* Class = "UILabel"; text = "22.2"; ObjectID = "Yyo-hb-Jgx"; */
+"Yyo-hb-Jgx.text" = "22.2";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "ZqS-hu-jt1"; */
+"ZqS-hu-jt1.text" = "30";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "ddL-Cb-sF3"; */
+"ddL-Cb-sF3.text" = "30";
+
+/* Class = "UILabel"; text = "Sunrise "; ObjectID = "fN3-HL-iAl"; */
+"fN3-HL-iAl.text" = "Sunrise ";
+
+/* Class = "UILabel"; text = "Wind"; ObjectID = "grb-0m-ksp"; */
+"grb-0m-ksp.text" = "Wind";
 
 /* Class = "UILabel"; text = "21"; ObjectID = "w9o-tW-03D"; */
 "w9o-tW-03D.text" = "21";

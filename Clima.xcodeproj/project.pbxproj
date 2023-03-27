@@ -13,6 +13,7 @@
 		A04C052629AB76D5005881EA /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C052529AB76D5005881EA /* WeatherModel.swift */; };
 		A08D671429C79D0800FAFF1B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A08D671329C79D0800FAFF1B /* SwiftyJSON */; };
 		A092EB0529C82FB30002929E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A092EB0429C82FB30002929E /* Alamofire */; };
+		A0CC11A029D0333D008FD538 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A0CC119F29D0333D008FD538 /* cities.json */; };
 		ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B0231BBFAF00365194 /* AppDelegate.swift */; };
 		ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */; };
 		ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B4231BBFAF00365194 /* WeatherViewController.swift */; };
@@ -26,10 +27,9 @@
 		A04C052129A80B58005881EA /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		A04C052329AA0C33005881EA /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		A04C052529AB76D5005881EA /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		A0CC118729CAD715008FD538 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		A0CC118829CAD72E008FD538 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Main.strings; sourceTree = "<group>"; };
-		A0CCEABD29CA28D70025B64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		A0CCEABE29CA28D70025B64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A0CC119F29D0333D008FD538 /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		A0CC11A629D18E7F008FD538 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A0CC11A729D18E97008FD538 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Main.strings; sourceTree = "<group>"; };
 		ADAA27AD231BBFAF00365194 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAA27B0231BBFAF00365194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +85,7 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				A0CC119F29D0333D008FD538 /* cities.json */,
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
 				ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */,
 				A04C052029A80B41005881EA /* Model */,
@@ -161,7 +162,6 @@
 				en,
 				Base,
 				ru,
-				es,
 				kk,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
@@ -185,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAA27CE231BC87F00365194 /* README.md in Resources */,
+				A0CC11A029D0333D008FD538 /* cities.json in Resources */,
 				ADAA27BD231BBFB300365194 /* LaunchScreen.storyboard in Resources */,
 				ADAA27BA231BBFB300365194 /* Assets.xcassets in Resources */,
 				ADAA27B8231BBFAF00365194 /* Main.storyboard in Resources */,
@@ -214,9 +215,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				ADAA27B7231BBFAF00365194 /* Base */,
-				A0CCEABD29CA28D70025B64D /* ru */,
-				A0CC118729CAD715008FD538 /* es */,
-				A0CC118829CAD72E008FD538 /* kk */,
+				A0CC11A629D18E7F008FD538 /* ru */,
+				A0CC11A729D18E97008FD538 /* kk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -225,7 +225,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				ADAA27BC231BBFB300365194 /* Base */,
-				A0CCEABE29CA28D70025B64D /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -2,8 +2,20 @@
 /* Class = "UITextField"; placeholder = "Search"; ObjectID = "2eh-wL-W34"; */
 "2eh-wL-W34.placeholder" = "Поиск";
 
+/* Class = "UILabel"; text = "%"; ObjectID = "5Zr-zd-Hxv"; */
+"5Zr-zd-Hxv.text" = "%";
+
+/* Class = "UILabel"; text = "Feels Like "; ObjectID = "6Px-TY-b2m"; */
+"6Px-TY-b2m.text" = "Ощущяется";
+
 /* Class = "UILabel"; text = "London"; ObjectID = "CWP-r8-Jsy"; */
 "CWP-r8-Jsy.text" = "Лондон";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "DV2-2s-pa6"; */
+"DV2-2s-pa6.text" = "30";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "FsV-1E-PSz"; */
+"FsV-1E-PSz.text" = "50";
 
 /* Class = "UILabel"; text = "C"; ObjectID = "MHH-vY-Mrb"; */
 "MHH-vY-Mrb.text" = "C";
@@ -11,11 +23,47 @@
 /* Class = "UILabel"; text = "°"; ObjectID = "N7Y-Fj-S2q"; */
 "N7Y-Fj-S2q.text" = "°";
 
+/* Class = "UILabel"; text = "30"; ObjectID = "O5z-9S-9Wx"; */
+"O5z-9S-9Wx.text" = "30";
+
+/* Class = "UILabel"; text = "Humidity"; ObjectID = "R2R-2A-U6N"; */
+"R2R-2A-U6N.text" = "Влажность";
+
+/* Class = "UILabel"; text = "m/sec"; ObjectID = "RNR-dI-nyQ"; */
+"RNR-dI-nyQ.text" = "m/sec";
+
+/* Class = "UILabel"; text = "22.2"; ObjectID = "Yyo-hb-Jgx"; */
+"Yyo-hb-Jgx.text" = "22.2";
+
+/* Class = "UILabel"; text = "°"; ObjectID = "ZCf-9l-zIK"; */
+"ZCf-9l-zIK.text" = "°";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "ZqS-hu-jt1"; */
+"ZqS-hu-jt1.text" = "30";
+
+/* Class = "UILabel"; text = "C"; ObjectID = "aJB-Qb-JwI"; */
+"aJB-Qb-JwI.text" = "C";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "ddL-Cb-sF3"; */
+"ddL-Cb-sF3.text" = "30";
+
+/* Class = "UILabel"; text = "Sunrise "; ObjectID = "fN3-HL-iAl"; */
+"fN3-HL-iAl.text" = "Восход ";
+
+/* Class = "UILabel"; text = "Wind Speed"; ObjectID = "grb-0m-ksp"; */
+"grb-0m-ksp.text" = "Скорость ветра";
+
+/* Class = "UILabel"; text = "Sunset"; ObjectID = "qU5-dh-48s"; */
+"qU5-dh-48s.text" = "Закат";
+
 /* Class = "UILabel"; text = "21"; ObjectID = "w9o-tW-03D"; */
 "w9o-tW-03D.text" = "21";
 
 /* Class = "UISegmentedControl"; wU4-yr-DoF.segmentTitles[0] = "Celsius"; ObjectID = "wU4-yr-DoF"; */
-"wU4-yr-DoF.segmentTitles[0]" = "Цельсия";
+"wU4-yr-DoF.segmentTitles[0]" = "Цельсии";
 
 /* Class = "UISegmentedControl"; wU4-yr-DoF.segmentTitles[1] = "Kelvin"; ObjectID = "wU4-yr-DoF"; */
 "wU4-yr-DoF.segmentTitles[1]" = "Кельвин";
+
+/* Class = "UILabel"; text = "Pressure"; ObjectID = "yMG-UN-Y79"; */
+"yMG-UN-Y79.text" = "Давление";

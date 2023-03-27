@@ -1,0 +1,153 @@
+
+{
+  "Moscow": {
+    "en": "Moscow",
+    "ru": "Москва",
+    "kk": "Мәскеу"
+  },
+  "Almaty": {
+    "en": "Almaty",
+    "ru": "Алматы",
+    "kk": "Алматы"
+  },
+  "New York": {
+    "en": "New York",
+    "ru": "Нью-Йорк",
+    "kk": "Нью-Йорк"
+  },
+  "Tokyo": {
+    "en": "Tokyo",
+    "ru": "Токио",
+    "kk": "Токио"
+  },
+  "Beijing": {
+    "en": "Beijing",
+    "ru": "Пекин",
+    "kk": "Бейжің"
+  },
+  "Copenhagen": {
+    "en": "Copenhagen",
+    "ru": "Копенгаген",
+    "kk": "Копенгаген"
+  },
+  "Baku": {
+    "en": "Baku",
+    "ru": "Баку",
+    "kk": "Баку"
+  },
+  "Berlin": {
+    "en": "Berlin",
+    "ru": "Берлин",
+    "kk": "Берлин"
+  },
+  "Washington": {
+    "en": "Washington",
+    "ru": "Вашингтон",
+    "kk": "Вашингтон"
+  },
+  "Izmir": {
+    "en": "Izmir",
+    "ru": "Измир",
+    "kk": "Измир"
+  },
+  "Astana": {
+    "en": "Astana",
+    "ru": "Астана",
+    "kk": "Астана"
+  },
+  "Madrid": {
+    "en": "Madrid",
+    "ru": "Мадрид",
+    "kk": "Мадрид"
+  },
+  "Mexico": {
+    "en": "Mexico",
+    "ru": "Мексика",
+    "kk": "Мексика"
+  },
+  "Minsk": {
+    "en": "Minsk",
+    "ru": "Минск",
+    "kk": "Минск"
+  },
+  "Mumbai": {
+    "en": "Mumbai",
+    "ru": "Мумбай",
+    "kk": "Мумбай"
+  },
+  "Ottawa": {
+    "en": "Ottawa",
+    "ru": "Оттава",
+    "kk": "Оттава"
+  },
+  "Rome": {
+    "en": "Rome",
+    "ru": "Рим",
+    "kk": "Рим"
+  },
+  "Istanbul": {
+    "en": "Istanbul",
+    "ru": "Стамбул",
+    "kk": "Стамбул"
+  },
+  "Tbilisi": {
+    "en": "Tbilisi",
+    "ru": "Тбилиси",
+    "kk": "Тбилиси"
+  },
+  "Toronto": {
+    "en": "Toronto",
+    "ru": "Торонто",
+    "kk": "Торонто"
+  },
+  "Tashkent": {
+    "en": "Tashkent",
+    "ru": "Ташкент",
+    "kk": "Ташкент"
+  },
+  "Chicago": {
+    "en": "Chicago",
+    "ru": "Чикаго",
+    "kk": "Чикаго"
+  },
+  "Shanghai": {
+    "en": "Shanghai",
+    "ru": "Шанхай",
+    "kk": "Шанхай"
+  },
+  "Shymkent": {
+    "en": "Shymkent",
+    "ru": "Шымкент",
+    "kk": "Шымкент"
+  },
+  "Bishkek": {
+    "en": "Bishkek",
+    "ru": "Бишкек",
+    "kk": "Бишкек"
+  },
+  "Yerevan": {
+    "en": "Yerevan",
+    "ru": "Ереван",
+    "kk": "Ереван"
+  },
+  "Kiev": {
+    "en": "Kiev",
+    "ru": "Киев",
+    "kk": "Киев"
+  },
+  "Barcelona": {
+    "en": "Barcelona",
+    "ru": "Барселона",
+    "kk": "Барселона"
+  },
+  "Brussels": {
+    "en": "Brussels",
+    "ru": "Брюссель",
+    "kk": "Брюссель"
+  },
+  "Cairo": {
+    "en": "Cairo",
+    "ru": "Каир",
+    "kk": "Каир"
+  }
+}

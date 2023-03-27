@@ -10,17 +10,38 @@ import UIKit
 import Localize_Swift
 
 class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
-
+    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var humidityLabel: UILabel!
+    
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    
+    @IBOutlet weak var sunriseLabel: UILabel!
+    
+    @IBOutlet weak var windLabel: UILabel!
+    
+    
+    @IBOutlet weak var humidityDataLabel: UILabel!
+    
+    
+    @IBOutlet weak var feelDataLabel: UILabel!
+    
+    
+    @IBOutlet weak var sunriseDataLabel: UILabel!
+    
     @IBOutlet weak var KelvinLabel: UILabel!
     
+    @IBOutlet weak var windDataLabel: UILabel!
     @IBOutlet weak var CelsiusLabel: UILabel!
     
-
+    
+    @IBOutlet weak var pressureDataLabel: UILabel!
+    
+    @IBOutlet weak var sunsetDataLabel: UILabel!
     
     var weatherManager = WeatherManager()
     override func viewDidLoad() {
@@ -31,7 +52,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         
         Localize.setCurrentLanguage("es")
     }
-
+    
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
@@ -59,47 +80,38 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.cityName.localized()
+            self.windDataLabel.text = String(weather.speed)
+            self.pressureDataLabel.text = String(weather.pressure)
+            self.feelDataLabel.text = String(weather.feels_like)
+            self.humidityDataLabel.text = String(weather.humidity)
+            self.sunriseDataLabel.text = String(weather.sunrise)
+            self.sunsetDataLabel.text = String(weather.sunset)
         }
-   
+        
+        
+        
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
     
+    lazy var celsius = Double(temperatureLabel.text!)!
+    lazy var kelvin = Double(temperatureLabel.text!)! + 273
     
     @IBAction func CelsiusToKelvinTapped(_ sender: UISegmentedControl) {
-        var result = Double(self.temperatureLabel.text!)!
-        let kelvin = Double(result) + 273.15
-        let celsius = kelvin - 273.15
         if sender.selectedSegmentIndex == 1 {
+            //result = kelvin as? String
             self.temperatureLabel.text = String(kelvin)
             self.KelvinLabel.text = "K"
             self.CelsiusLabel.text = ""
             print("Right")
-            
         } else if sender.selectedSegmentIndex == 0 {
+            celsius = kelvin - 273
             self.temperatureLabel.text = String(celsius)
             self.KelvinLabel.text = "C"
             self.CelsiusLabel.text = "°"
             print(sender.selectedSegmentIndex)
         }
     }
-    
-    
-//    func reset() {
-//        // сбросить все изменения
-//        self.temperatureLabel.text =
-//        switch1.isOn = false
-//        switch2.isOn = false
-//    }
-//
-//    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-//        if sender.selectedSegmentIndex == 0 {
-//            reset()
-//        }
-//    }
-//
-//    sender.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
 }
-
